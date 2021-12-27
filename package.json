@@ -1,6 +1,6 @@
 {
   "name": "kalender-events-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "calendar events cli",
   "scripts": {
     "watch": "tsc --watch",
@@ -9,7 +9,6 @@
     "compile": "npm run build && npm run tsc-declaration && npm run tsc",
     "tsc-declaration": "tsc --declaration --emitDeclarationOnly",
     "tsc": "tsc",
-
     "release": "release-it"
   },
   "bin": {
@@ -34,21 +33,21 @@
   "exports": "./dist/index.js",
   "main": "./dist/index.js",
   "author": "naimo84",
-  "dependencies": {   
-    "commander": "^8.3.0",   
-    "globby": "^11.0.4",   
-    "kalender-events": "^0.25.2"  
+  "dependencies": {
+    "commander": "^8.3.0",
+    "globby": "^11.0.4",
+    "kalender-events": "^0.25.2"
   },
-  "devDependencies": {  
-    "@types/node": "^13.11.0",   
+  "devDependencies": {
+    "@types/node": "^13.11.0",
     "commitlint": "^8.3.5",
     "esbuild": "^0.13.15",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-typescript": "^2.12.2",
-    "gulp-watch": "^4.0.1",    
-    "release-it": "^14.11.8",   
+    "gulp-watch": "^4.0.1",
+    "release-it": "^14.11.8",
     "typescript": "^4.5.3"
   },
   "license": "ISC",
