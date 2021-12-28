@@ -1,24 +1,15 @@
 const esbuild = require('esbuild')
 
-const makeAllPackagesExternalPlugin = {
-  name: 'make-all-packages-external',
-  setup(build) {
-    let filter = /^[^.\/]|^\.[^.\/]|^\.\.[^\/]/ // Must not start with "/" or "./" or "../"
-    build.onResolve({ filter }, args => ({ path: args.path, external: true }))
-  },
-}
-
-const isWatchBuild = process.argv.indexOf('--watch') >= 0;
+// Automatically exclude all node_modules from the bundled version
+const { nodeExternalsPlugin } = require('esbuild-node-externals')
 
 esbuild.build({
-  logLevel: "info",
   entryPoints: ['./src/index.ts'],
   outfile: 'dist/index.js',
-  bundle: !isWatchBuild,
-  minify: !isWatchBuild,
+  bundle: true,
+  minify: true,
   platform: 'node',
   sourcemap: true,
-  target: 'node14',
-  watch: isWatchBuild,
-  plugins: [makeAllPackagesExternalPlugin]
+  target: 'node16',
+  plugins: [nodeExternalsPlugin()]
 }).catch(() => process.exit(1))

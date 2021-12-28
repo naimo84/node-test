@@ -5,3 +5,8 @@ test/*
 src/*
 gulpfile.js
 buildSrc
+commitlint.config.js
+*.tgz
+*.md
+tsconfig.json    
+.nycrc

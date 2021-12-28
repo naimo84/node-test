@@ -2,6 +2,7 @@ var gulp = require("gulp");
 var ts = require("gulp-typescript");
 var tsProject = ts.createProject("tsconfig.json",{declaration:true});
 var sourcemaps = require('gulp-sourcemaps');
+const minify = require("gulp-minify");
 
 var paths = {   
     src: 'src',
@@ -16,8 +17,8 @@ gulp.task("default", gulp.series(
             .src()
             .pipe(sourcemaps.init())
             .pipe(tsProject())
-            .js
-            .pipe(sourcemaps.write('.'))
+            .pipe(minify({noSource: true}))
+            .js           
             .pipe(gulp.dest(paths.dist));
     })
 );

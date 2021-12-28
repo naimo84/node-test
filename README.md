@@ -33,7 +33,6 @@ However, if you get some profit from this or just want to encourage me to contin
 - **Crypto.&#65279;com** Use my referral link https://crypto.com/app/f2smbah8fm to sign up for Crypto.&#65279;com and we both get $25 USD :) 
 - [![PayPal][badge_paypal]][paypal-donations] **PayPal**— You can make one-time donations via PayPal. I'll probably buy a ~~coffee~~ tea. :tea:
 - [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T412CXA) **Ko-fi**— I'll buy a ~~tea~~ coffee. :coffee: :wink:
-- <img src="./docs/bitcoin.png" width="50"/>&nbsp; **Bitcoin**—You can send me bitcoins at this address (or scanning the code): `3GqiebqcZeonziRUMYxU35J3jPSMJzpTAc`
 
 Thanks! :heart:
 
@@ -48,9 +47,6 @@ Have an idea? Found a bug? See [how to contribute][contributing].
 <img src="https://img.shields.io/badge/doku-naimo84.github.io-0078D6?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 
-
-[badge_brave]: ./docs/support_banner.png
 [badge_paypal]: https://img.shields.io/badge/Donate-PayPal-blue.svg
 [paypal-donations]: https://paypal.me/NeumannBenjamin
-[brave]: https://brave.com/nai412
 [contributing]: /CONTRIBUTING.md
