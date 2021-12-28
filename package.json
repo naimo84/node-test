@@ -1,10 +1,10 @@
 {
   "name": "kalender-events-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "calendar events cli",
   "scripts": {
     "watch": "tsc --watch",
-    "build": "node ./buildSrc/esbuild.js",    
+    "build": "node ./buildSrc/esbuild.js",
     "compile": "npm run build && npm run tsc-declaration",
     "tsc-declaration": "tsc --declaration --emitDeclarationOnly",
     "tsc": "tsc",
