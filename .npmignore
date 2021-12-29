@@ -10,3 +10,7 @@ commitlint.config.js
 *.md
 tsconfig.json    
 .nycrc
+CHANGELOG.md
+CONTRIBUTING.md
+commitlint.config.js
+.release-it.js
