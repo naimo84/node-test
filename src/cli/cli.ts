@@ -70,6 +70,7 @@ export async function execute(rawArgs: string[]) {
     const languageOption = new Option('--language [language]', '');
     const eventTypesOption = new Option('--eventTypes, --eventtypes [eventtypes]', '');
     const basicAuthOption = new Option('--basicAuth [basicAuth]', '');
+    const calendarOption = new Option('--calendar [calendar]', '');
 
     program.addOption(urlOption);
     program.addOption(typeOption);
@@ -89,6 +90,7 @@ export async function execute(rawArgs: string[]) {
     program.addOption(languageOption);
     program.addOption(eventTypesOption);
     program.addOption(basicAuthOption);
+    program.addOption(calendarOption);
 
 
     program
