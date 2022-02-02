@@ -36,9 +36,11 @@
   "main": "./dist/index.js",
   "author": "naimo84",
   "dependencies": {
+    "axios": "^0.25.0",
     "commander": "^8.3.0",
     "globby": "^11.0.4",
-    "kalender-events": "^0.25.2"
+    "kalender-events": "^0.25.2",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@types/node": "^13.11.0",
