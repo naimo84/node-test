@@ -1,6 +1,6 @@
 import * as os from 'os';
 import { Command, Option } from 'commander';
-import { KalenderEvents,Config } from 'kalender-events';
+import { KalenderEvents, Config } from 'kalender-events';
 import { default as globby } from 'globby';
 import { promises as fsPromises } from 'fs';
 import * as fs from 'fs';
@@ -40,6 +40,32 @@ async function icloudurl(cli1: CliOptions, cli2: Command | Config, cli3: Command
   getCalender(options).then((obj: any) => {
     console.log(obj)
   })
+}
+
+async function create(cli1: CliOptions, cli2: Command | Config, cli3: Command) {
+  let options: any = cli1;
+
+  if (cli3 !== undefined) {
+    options = cli2 as Config;
+    options.argument = cli1;
+  }
+
+ 
+    options = Object.assign(options, program.opts());
+
+  const ke = new KalenderEvents(options);
+
+  const ret: any = await ke.createEvent({
+    summary: options.summary,
+    uid: {
+      uid: options.uid,
+      date: options.start
+
+    },
+    eventStart: options.start,
+    eventEnd: options.end
+  })
+  console.log(ret);
 }
 
 async function status(cli1: CliOptions, cli2: Command | Config, cli3: Command) {
@@ -116,6 +142,15 @@ export async function execute(rawArgs: string[]) {
       .command('icloudurl')
       .description('Get iCloud Calenders and URL')
       .action(icloudurl);
+
+    program
+      .command('create')
+      .description('creates an Event')
+      .addOption(new Option('--start [start]', ''))
+      .addOption(new Option('--end [end]', ''))
+      .addOption(new Option('--uid [uid]', ''))
+      .addOption(new Option('--summary [summary]', ''))
+      .action(create);
 
     program
       .command('all', { isDefault: true })
