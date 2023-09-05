@@ -42,31 +42,6 @@ async function icloudurl(cli1: CliOptions, cli2: Command | Config, cli3: Command
   })
 }
 
-async function create(cli1: CliOptions, cli2: Command | Config, cli3: Command) {
-  let options: any = cli1;
-
-  if (cli3 !== undefined) {
-    options = cli2 as Config;
-    options.argument = cli1;
-  }
-
- 
-    options = Object.assign(options, program.opts());
-
-  const ke = new KalenderEvents(options);
-
-  const ret: any = await ke.createEvent({
-    summary: options.summary,
-    uid: {
-      uid: options.uid,
-      date: options.start
-
-    },
-    eventStart: options.start,
-    eventEnd: options.end
-  })
-  console.log(ret);
-}
 
 async function status(cli1: CliOptions, cli2: Command | Config, cli3: Command) {
   const options: CliOptions = await getOptions(cli1, cli2, cli3)
@@ -142,16 +117,6 @@ export async function execute(rawArgs: string[]) {
       .command('icloudurl')
       .description('Get iCloud Calenders and URL')
       .action(icloudurl);
-
-    program
-      .command('create')
-      .description('creates an Event')
-      .addOption(new Option('--start [start]', ''))
-      .addOption(new Option('--end [end]', ''))
-      .addOption(new Option('--uid [uid]', ''))
-      .addOption(new Option('--summary [summary]', ''))
-      .action(create);
-
     program
       .command('all', { isDefault: true })
       .description('Get iCloud Calenders and URL')
