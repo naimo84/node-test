@@ -38,7 +38,7 @@
   "dependencies": {
     "axios": "^0.25.0",
     "commander": "^8.3.0",
-    "globby": "^11.0.4",
+    "globby": "^11.1.0",
     "kalender-events": "0.28.2",
     "xml-js": "^1.6.11"
   },
